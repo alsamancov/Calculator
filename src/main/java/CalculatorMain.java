@@ -1,3 +1,6 @@
+import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -34,17 +37,25 @@ public class CalculatorMain {
                 }
             }
             System.out.println(result);
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public static List<String> getListFromFile() throws IOException {
-        File file = new File("c:\\task\\source.txt");
-        List<String> list = Files.readAllLines(file.toPath(), Charset.defaultCharset());
-        String tempStr = list.get(list.size() - 1);
-        list.remove(list.size() - 1);
-        list.add(0, tempStr);
+        JFileChooser fileopen = new JFileChooser();
+        FileFilter filter = new FileNameExtensionFilter("c files", "c");
+        fileopen.addChoosableFileFilter(filter);
+        int ret = fileopen.showDialog(null, "Open file");
+        File file;
+        List<String> list = null;
+        if (ret == JFileChooser.APPROVE_OPTION) {
+            file = fileopen.getSelectedFile();
+            list = Files.readAllLines(file.toPath(), Charset.defaultCharset());
+            String tempStr = list.get(list.size() - 1);
+            list.remove(list.size() - 1);
+            list.add(0, tempStr);
+        }
         return list;
     }
 
