@@ -7,7 +7,7 @@
     <groupId>test.calculator</groupId>
     <artifactId>calculator</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+
 
 
     <dependencies>
@@ -36,7 +36,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>calculator.CalculatorMain</mainClass>
+                            <mainClass>CalculatorMain</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
