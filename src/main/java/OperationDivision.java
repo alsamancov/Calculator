@@ -7,7 +7,6 @@ public class OperationDivision implements Operation {
             result = num1.divide( num2);
         } catch (ArithmeticException e) {
             System.out.println("Divided by zero!");
-            result = null;
         }
         return result;
     }
