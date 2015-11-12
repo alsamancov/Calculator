@@ -23,6 +23,8 @@ multiply etc).  The instructions will ignore mathematical precedence. The last i
 number (e.g., “apply 3”). The calculator is then initialised with that number and the previous instructions are applied
 to that number.
 Examples of the calculator lifecycle might be:
+
+
  Example 1.
  [Input from file]
 add 2
@@ -34,6 +36,8 @@ apply 3
 [Explanation]
 (3 + 2) * 3 = 15
 
+
+
 Example 2.
 [Input from file]
 multiply 9
@@ -43,6 +47,8 @@ apply 5
 
 [Explanation]
 5 * 9 = 45
+
+
 Example 3.
 [Input from file]
 apply 1
@@ -50,8 +56,8 @@ apply 1
 1
 
 
-Operation design pattern
+Strategy design pattern
 
-data getting from file
+data getting from file with dialog window
 
 
