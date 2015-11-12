@@ -5,7 +5,7 @@ import static org.junit.Assert.assertNotEquals;
 
 public class TestOperationSubstract {
     @Test
-    public void testDoOperation() {
+     public void testDoOperation() {
         OperationSubstract operationSubstract = new OperationSubstract();
 
         int num1 = 3;
