@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.Assert.*;
 
 public class TestOperationAdd {
@@ -8,17 +10,20 @@ public class TestOperationAdd {
     public void testDoOperation() {
         OperationAdd operationAdd = new OperationAdd();
 
-        double num1 = 3.0;
-        double num2 = 3.0;
-        double result = operationAdd.doOperation(num1, num2);
-        assertEquals(result, 6.0, 0);
+        BigDecimal num1 = new BigDecimal(3);
+        BigDecimal num2 = new BigDecimal(3);
+        BigDecimal result = operationAdd.doOperation(num1, num2);
+
+        BigDecimal num3 = new BigDecimal(6);
+
+        assertEquals(result, num3);
 
         assertNotEquals(null, result);
 
-        double value1 = 0;
-        double value2 = 25000000.0;
-        double summ = operationAdd.doOperation(value1, value2);
-        assertEquals(summ, value2, 0);
+        BigDecimal value1 = new BigDecimal(0);
+        BigDecimal value2 = new BigDecimal(25000000);
+        BigDecimal summ = operationAdd.doOperation(value1, value2);
+        assertEquals(summ, value2);
     }
 
 

@@ -11,7 +11,7 @@ public class TestCalculatorMain {
         List<String> testList = CalculatorMain.getListFromFile();
         String str = testList.get(0);
 
-        assertEquals(str, "apply 5");
+        assertEquals(str, "apply 3");
 
         assertNotEquals(str, "");
 

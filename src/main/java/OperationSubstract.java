@@ -1,6 +1,7 @@
+import java.math.BigDecimal;
 
 public class OperationSubstract implements Operation {
-    public double doOperation(double num1, double num2) {
-        return num1 - num2;
+    public BigDecimal doOperation(BigDecimal num1, BigDecimal num2) {
+        return num1.subtract(num2);
     }
 }

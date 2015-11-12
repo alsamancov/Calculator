@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -8,16 +10,19 @@ public class TestOperationSubstract {
      public void testDoOperation() {
         OperationSubstract operationSubstract = new OperationSubstract();
 
-        double num1 = 3.0;
-        double num2 = 3.0;
-        double result = operationSubstract.doOperation(num1, num2);
-        assertEquals(result, 0.0, 0);
+        BigDecimal num1 = new BigDecimal(3);
+        BigDecimal num2 = new BigDecimal(3);
+        BigDecimal result = operationSubstract.doOperation(num1, num2);
+
+        BigDecimal value1 = new BigDecimal(0);
+
+        assertEquals(result, value1);
 
         assertNotEquals(null, result);
 
-        double value1 = 0.0;
-        double value2 = 25000000.0;
-        double summ = operationSubstract.doOperation(value1, value2);
-        assertEquals(summ, (value2 * - 1), 0);
+
+        BigDecimal value2 = new BigDecimal(25000000);
+        BigDecimal summ = operationSubstract.doOperation(value1, value2);
+        assertEquals(summ, (value2.multiply(BigDecimal.valueOf(-1))));
     }
 }
