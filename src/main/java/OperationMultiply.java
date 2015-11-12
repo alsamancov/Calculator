@@ -1,6 +1,6 @@
 
-public class OperationMultiply implements Strategy {
-    public int doOperation(int num1, int num2) {
+public class OperationMultiply implements Operation {
+    public double doOperation(double num1, double num2) {
         return num1 * num2;
     }
 }

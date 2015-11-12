@@ -8,16 +8,16 @@ public class TestOperationMultiply {
     public void testDoOperation() {
         OperationMultiply operationMultiply = new OperationMultiply();
 
-        int num1 = 3;
-        int num2 = 3;
-        int result = operationMultiply.doOperation(num1, num2);
-        assertEquals(result, 9);
+        double num1 = 3.0;
+        double num2 = 3.0;
+        double result = operationMultiply.doOperation(num1, num2);
+        assertEquals(result, 9.0, 0);
 
         assertNotEquals(null, result);
 
-        int value1 = 0;
-        int value2 = 25000000;
-        int summ = operationMultiply.doOperation(value1, value2);
-        assertEquals(summ, value1);
+        double value1 = 0.0;
+        double value2 = 25000000.0;
+        double summ = operationMultiply.doOperation(value1, value2);
+        assertEquals(summ, value1, 0);
     }
 }

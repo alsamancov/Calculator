@@ -1,12 +1,12 @@
 
 public class Context {
-    private Strategy strategy;
+    private Operation operation;
 
-    public Context(Strategy strategy){
-        this.strategy = strategy;
+    public Context(Operation operation){
+        this.operation = operation;
     }
 
-    public int executeStrategy(int num1, int num2){
-        return strategy.doOperation(num1, num2);
+    public double executeStrategy(double num1, double num2){
+        return operation.doOperation(num1, num2);
     }
 }

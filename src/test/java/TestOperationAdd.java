@@ -8,17 +8,17 @@ public class TestOperationAdd {
     public void testDoOperation() {
         OperationAdd operationAdd = new OperationAdd();
 
-        int num1 = 3;
-        int num2 = 3;
-        int result = operationAdd.doOperation(num1, num2);
-        assertEquals(result, 6);
+        double num1 = 3.0;
+        double num2 = 3.0;
+        double result = operationAdd.doOperation(num1, num2);
+        assertEquals(result, 6.0, 0);
 
         assertNotEquals(null, result);
 
-        int value1 = 0;
-        int value2 = 25000000;
-        int summ = operationAdd.doOperation(value1, value2);
-        assertEquals(summ, value2);
+        double value1 = 0;
+        double value2 = 25000000.0;
+        double summ = operationAdd.doOperation(value1, value2);
+        assertEquals(summ, value2, 0);
     }
 
 

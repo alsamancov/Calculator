@@ -1,6 +1,6 @@
 
 # Calculator
-Strategy design pattern 
+Operation design pattern
 
 data getting from file
 

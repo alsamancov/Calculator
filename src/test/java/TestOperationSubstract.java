@@ -8,16 +8,16 @@ public class TestOperationSubstract {
      public void testDoOperation() {
         OperationSubstract operationSubstract = new OperationSubstract();
 
-        int num1 = 3;
-        int num2 = 3;
-        int result = operationSubstract.doOperation(num1, num2);
-        assertEquals(result, 0);
+        double num1 = 3.0;
+        double num2 = 3.0;
+        double result = operationSubstract.doOperation(num1, num2);
+        assertEquals(result, 0.0, 0);
 
         assertNotEquals(null, result);
 
-        int value1 = 0;
-        int value2 = 25000000;
-        int summ = operationSubstract.doOperation(value1, value2);
-        assertEquals(summ, (value2 * - 1));
+        double value1 = 0.0;
+        double value2 = 25000000.0;
+        double summ = operationSubstract.doOperation(value1, value2);
+        assertEquals(summ, (value2 * - 1), 0);
     }
 }

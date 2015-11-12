@@ -8,17 +8,24 @@ public class TestOperationDivision {
     public void testDoOperation() {
         OperationDivision operationDivision = new OperationDivision();
 
-        int num1 = 3;
-        int num2 = 3;
-        int result = operationDivision.doOperation(num1, num2);
-        assertEquals(result, 1);
+        double num1 = 3.0;
+        double num2 = 3.0;
+        double result = operationDivision.doOperation(num1, num2);
+
+
+        assertEquals(result, 1.0, 0);
 
         assertNotEquals(null, result);
 
-        int value1 = 1;
-        int value2 = 25000000;
-        int summ = operationDivision.doOperation(value2, value1);
-        assertEquals(summ, value2);
+        double value1 = 1.0;
+        double value2 = 25000000.0;
+        double summ = operationDivision.doOperation(value2, value1);
+        assertEquals(summ, value2, 0);
+
+//        double value3 = 0;
+//        double result2 = operationDivision.doOperation(value1, value3);
+//        assertNull("NaN", result2);
+
 
 
     }
