@@ -11,6 +11,10 @@ import java.util.List;
 
 public class CalculatorMain {
     public static void main(String[] args) throws IOException {
+        final String SUBSTRACT = "substract";
+        final String ADD = "add";
+        final String MULTIPLY = "multiply";
+        final String DIVISION = "division";
 
         try {
             List<String> list = getListFromFile();
@@ -18,20 +22,21 @@ public class CalculatorMain {
             List<String> stringList = getStrings(list);
             BigDecimal num1 = digitsList.get(0);
             BigDecimal result = num1;
+
             for (int i = 1; i < stringList.size(); i++) {
-                if (stringList.get(i).contains("add")) {
+                if (stringList.get(i).contains(ADD)) {
                     Context context = new Context(new OperationAdd());
                     result = context.executeStrategy(num1, digitsList.get(i));
                 }
-                if (stringList.get(i).contains("multiply")) {
+                if (stringList.get(i).contains(MULTIPLY)) {
                     Context context = new Context(new OperationMultiply());
                     result = context.executeStrategy(num1, digitsList.get(i));
                 }
-                if (list.get(i).contains("division")) {
+                if (list.get(i).contains(DIVISION)) {
                     Context context = new Context(new OperationDivision());
                     result = context.executeStrategy(num1, digitsList.get(i));
                 }
-                if (list.get(i).contains("substract")) {
+                if (list.get(i).contains(SUBSTRACT)) {
                     Context context = new Context(new OperationSubstract());
                     result = context.executeStrategy(num1, digitsList.get(i));
                 }
@@ -44,7 +49,7 @@ public class CalculatorMain {
 
     public static List<String> getListFromFile() throws IOException {
         JFileChooser fileopen = new JFileChooser();
-        FileFilter filter = new FileNameExtensionFilter("c files", "c");
+        FileFilter filter = new FileNameExtensionFilter("txt files", "txt");
         fileopen.addChoosableFileFilter(filter);
         int ret = fileopen.showDialog(null, "Open file");
         File file;
