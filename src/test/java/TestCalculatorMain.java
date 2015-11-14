@@ -13,12 +13,24 @@ public class TestCalculatorMain {
         String str = testList.get(0);
 
         assertEquals(str, "apply 3");
+    }
+
+    @Test
+    public void testGetListFromFileNotEquals() throws IOException{
+        List<String> testList = CalculatorMain.getListFromFile();
+        String str = testList.get(0);
 
         assertNotEquals(str, "");
+    }
+
+    @Test
+    public void testGetListFromFileNotNull() throws IOException{
+        List<String> testList = CalculatorMain.getListFromFile();
+        String str = testList.get(0);
 
         assertNotNull(str);
-
     }
+
 
     @Test
     public void testGetDigits() throws IOException {
