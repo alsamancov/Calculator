@@ -11,7 +11,6 @@ public class TestCalculatorMain {
     public void testGetListFromFile() throws IOException {
         List<String> testList = CalculatorMain.getListFromFile();
         String str = testList.get(0);
-
         assertEquals(str, "apply 3");
     }
 
@@ -19,7 +18,6 @@ public class TestCalculatorMain {
     public void testGetListFromFileNotEquals() throws IOException{
         List<String> testList = CalculatorMain.getListFromFile();
         String str = testList.get(0);
-
         assertNotEquals(str, "");
     }
 
@@ -27,7 +25,6 @@ public class TestCalculatorMain {
     public void testGetListFromFileNotNull() throws IOException{
         List<String> testList = CalculatorMain.getListFromFile();
         String str = testList.get(0);
-
         assertNotNull(str);
     }
 
@@ -44,9 +41,7 @@ public class TestCalculatorMain {
     public void testGetDigitsNotEquals() throws IOException{
         List<BigDecimal> numList = CalculatorMain.getDigits(CalculatorMain.getListFromFile());
         BigDecimal num1 = numList.get(0);
-
         BigDecimal num3 = new BigDecimal(0);
-
         assertNotEquals(num1, num3);
     }
 
@@ -62,11 +57,20 @@ public class TestCalculatorMain {
     public void testGetStrings() throws IOException{
         List<String> strList = CalculatorMain.getStrings(CalculatorMain.getListFromFile());
         String str1 = strList.get(0);
-
         assertEquals(str1, "apply");
+    }
 
+    @Test
+    public void testGetStringsNotEquals() throws IOException{
+        List<String> strList = CalculatorMain.getStrings(CalculatorMain.getListFromFile());
+        String str1 = strList.get(0);
         assertNotEquals(str1, "");
+    }
 
+    @Test
+    public void testGetStringsNotEquals() throws IOException{
+        List<String> strList = CalculatorMain.getStrings(CalculatorMain.getListFromFile());
+        String str1 = strList.get(0);
         assertNotNull(str1);
     }
 }
