@@ -36,16 +36,27 @@ public class TestCalculatorMain {
     public void testGetDigits() throws IOException {
         List<BigDecimal> numList = CalculatorMain.getDigits(CalculatorMain.getListFromFile());
         BigDecimal num1 = numList.get(0);
-
         BigDecimal num2 = new BigDecimal(3);
+        assertEquals(num1, num2);
+    }
+
+    @Test
+    public void testGetDigitsNotEquals() throws IOException{
+        List<BigDecimal> numList = CalculatorMain.getDigits(CalculatorMain.getListFromFile());
+        BigDecimal num1 = numList.get(0);
+
         BigDecimal num3 = new BigDecimal(0);
 
-        assertEquals(num1, num2);
+        assertNotEquals(num1, num3);
+    }
 
-        assertNotEquals(num1,num3);
-
+    @Test
+    public void testGetDigitsNotNull() throws IOException{
+        List<BigDecimal> numList = CalculatorMain.getDigits(CalculatorMain.getListFromFile());
+        BigDecimal num1 = numList.get(0);
         assertNotNull(num1);
     }
+
 
     @Test
     public void testGetStrings() throws IOException{
